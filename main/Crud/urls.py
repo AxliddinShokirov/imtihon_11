@@ -9,7 +9,7 @@ urlpatterns =[
      path('attendance/create/', views.create_attendance, name='attendance_create'),
      path('attendance/list/', views.create_attendance, name='attendance_list'),
      path('attendance/delete/<int:id>/', views.delete_attendance, name='attendance_delete'),
-    # boshqa URL yo'llarini qo'shish mumkin
+   
 
 
      

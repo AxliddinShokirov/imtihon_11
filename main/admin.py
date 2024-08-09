@@ -3,4 +3,4 @@ from .models import *
 # Register your models here.
 admin.site.register(Attendance)
 admin.site.register(Xodimlar_name)
-admin.site.register(User_name)
+admin.site.register(User_names)

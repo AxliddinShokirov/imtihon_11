@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class User_name(models.Model):
+class User_names(models.Model):
     name=models.CharField(max_length=255)
     surname=models.CharField(max_length=255)
     age=models.IntegerField()
@@ -10,6 +10,7 @@ class User_name(models.Model):
     phone_number=models.CharField(max_length=20)
     image=models.ImageField()
     def __str__(self):
+
         return self.name
     
 

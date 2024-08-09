@@ -216,15 +216,18 @@
                         </div>
                         
                         <div class="dropdown d-inline-block">
+                            
                             <li class="nav-item mx-2">
                                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded-circle header-profile-user" src="https://avatars.mds.yandex.net/i?id=2a000001911f6b879b089f377922e5723754-1543510-fast-images&n=13"
                                 alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1">Patrick</span>
+                                <span class="d-none d-xl-inline-block ms-1">{{users.name}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            
                             </button>
                         </li>
+                    
                            
                         </div>
                         
@@ -438,18 +441,18 @@
             </div>
         </header> <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
-
+    
     <div class="h-100">
+        
         <div class="user-wid text-center py-4">
             <div class="user-img">
-                <img src="https://avatars.mds.yandex.net/i?id=3fb06374c98b3387feb83d0f789a24f8b821043a-5277129-images-thumbs&n=13" alt="" class="avatar-md mx-auto rounded-circle">
+                <img src="https://avatars.mds.yandex.net/i?id=4369a9e41e12b7ef2042df9b8b831dc52518c805-10355125-images-thumbs&n=13" alt="" class="avatar-md mx-auto rounded-circle">
             </div>
             
             
             <div class="mt-3">
-                
                 <a href="#" class="text-reset fw-medium font-size-16"></a>
-                <p class="text-muted mt-1 mb-0 font-size-13">Axlddin Shokirov</p>
+                <p class="text-muted mt-1 mb-0 font-size-13">Axliddin Shokirov</p>
                 
             </div>
         </div>
@@ -473,7 +476,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="mdi mdi-airplay"></i><span class="badge rounded-pill bg-info float-end">2</span>
+                        <i class="mdi mdi-airplay"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span>Davomat</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -484,13 +487,13 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="mdi mdi-airplay"></i><span class="badge rounded-pill bg-info float-end">2</span>
-                        <span>Category_crate</span>
+                        <i class="mdi mdi-airplay"></i><span class="badge rounded-pill bg-info float-end"></span>
+                        <span>login</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Gym_list</a></li>
+                        <li><a href="{%url 'register_user'%}">Login</a></li>
                     </a></li>
-                    <li><a href="#">Gym_crate</a></li>
+                    <li><a href="{%url 'log_out'%}">log_out</a></li>
                 </ul>
             </li>
             

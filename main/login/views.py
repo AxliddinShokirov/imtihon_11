@@ -24,11 +24,11 @@ def login_user(request):
             return redirect('error')
     return render(request, 'dashboard/login/login.html')
 
-# Foydalanuvchini tizimdan chiqarish uchun view
+
 def log_out(request):
     logout(request)
     return redirect('login_user')
 
-# Xatolik yuz berganda ko'rsatiladigan sahifa uchun view
+
 def error(request):
     return render(request, 'dashboard/login/error.html')
