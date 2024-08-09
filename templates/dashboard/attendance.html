@@ -1,0 +1,46 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="col-lg-15">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bugungi sana: {{ today }}</h4>  <!-- Bugungi sanani ko'rsatish -->
+
+            <div class="table-responsive">
+                <table class="table table-dark mb-0">
+                    <thead>
+                        <tr>
+                            <th>Xodim</th>
+                            <th>Kun</th>
+                            <th>Davomat</th>
+                            <th>O'chirish</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in attendance %}
+                        <tr>
+                            <th>{{ i.xodimlar_name.name }}</th>
+                            <td>{{ i.date }}</td>
+                            <td>
+                                <form action="{% url 'mark_attendance' i.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn {% if i.isinstance %}btn-primary{% else %}btn-secondary{% endif %}">
+                                        {% if i.isinstance %}Qayt etilgan{% else %}Qayt etilmagan{% endif %}
+                                    </button>
+                                </form>
+                            </td>
+                            <td> <form action="{% url 'attendance_delete' i.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    O'chirish
+                                </button>
+                            </form></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="col-lg-15">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+
+            <div class="table-responsive">
+                <table class="table table-dark mb-0">
+                    <thead>
+                        <tr>
+                            <th>ism</th>
+                            <th>Familiya</th>
+                            <th>tel</th>
+                            <th>emil</th>
+                            <th>O'chirish</th>
+                            <th>Yangilash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for xodim in xodimlar%}
+                        <tr>
+                            <th>{{xodim.name}}</th>
+                            <td>{{xodim.surname}}</td>
+                            <td>{{xodim.phone_number}}</td>
+                            <td>{{xodim.email}}</td>
+                           <td> <form action="{% url 'Xodimlar_delete' xodim.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    O'chirish
+                                </button>
+                            </form></td>
+
+                            <td> <form action="{% url 'Xodimlar_update' xodim.id  %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    Yangilash
+                                </button>
+                            </form></td>
+
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
