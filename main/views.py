@@ -4,6 +4,8 @@ from main import models
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone  
 
+
+@login_required
 def base_s(request):
     salom=models.User_names.objects.last()
     return render(request,'dashboard/base.html', {'salom': salom})
@@ -17,7 +19,7 @@ def attendance(request):
     
 
 
-
+@login_required
 def mark_attendance(request, id):
     attendance = models.Attendance.objects.get(id=id)
     
@@ -27,6 +29,7 @@ def mark_attendance(request, id):
     
     return redirect('attendance') 
 
+@login_required
 def User_create(request):
     context={}
     context['categorys'] = models.User_name.objects.all()

@@ -1,5 +1,5 @@
 
-
+{% if request.user.is_authenticated %}
 <!doctype html>
 <html lang="en" >
     {%load static%}
@@ -17,6 +17,8 @@
         <!-- Bootstrap Css -->
     <link href="{%static 'deshboard/css/bootstrap.min.css'%}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="{%static 'deshboard/css/icons.min.css'%}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{%static 'deshboard/css/app.min.css'%}" id="app-style"  rel="stylesheet" type="text/css" />
@@ -494,6 +496,7 @@
                         <li><a href="{%url 'register_user'%}">Login</a></li>
                     </a></li>
                     <li><a href="{%url 'log_out'%}">log_out</a></li>
+                    <li><a href="{%url 'register_user'%}">register_user</a></li>
                 </ul>
             </li>
             
@@ -647,7 +650,21 @@
 <script src="{%static 'deshboard/js/pages/dashboard-2.init.js'%}"></script>
 
 <script src="{%static 'deshboard/js/app.js'%}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+{% block js %}
+{% endblock %}
 
 </body>
 
 </html>
+{% else %}
+<li class="nav-item me-2">
+    <a href="{% url 'login_user' %}" class="btn btn-outline-secondary rounded-pill px-3">Login</a>
+
+</li>
+
+{% endif %}

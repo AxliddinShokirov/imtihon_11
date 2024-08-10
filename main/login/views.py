@@ -9,7 +9,7 @@ def register_user(request):
             email=request.POST['email']
         )
         return redirect('login_user')
-    return render(request, 'dashboard/login/login.html')
+    return render(request, 'dashboard/login/register.html')
 
 
 def login_user(request):
@@ -31,4 +31,4 @@ def log_out(request):
 
 
 def error(request):
-    return render(request, 'dashboard/login/error.html')
+    return render(request, 'dashboard/login/erorr.html')
